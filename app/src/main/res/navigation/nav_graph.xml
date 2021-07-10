@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu_wall">
+
+    <fragment
+        android:id="@+id/singing"
+        android:name="com.example.letsrun.singing"
+        android:label="Let's Start Running!"
+        tools:layout="@layout/fragment_singing"/>
+    <fragment
+        android:id="@+id/friendsListFragment"
+        android:name="com.example.letsrun.FriendsListFragment"
+        android:label="Wall"
+        tools:layout="@layout/fragment_friends_list">
+        <argument android:name="user_Name"
+            app:argType="string" />
+        <argument android:name="user_Pass"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="com.example.letsrun.profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="user_Name"
+            app:argType="string" />
+        <argument
+            android:name="user_Pass"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myRunningTracks"
+        android:name="com.example.letsrun.MyRunningTracks"
+        android:label="My Running Tracks"
+        tools:layout="@layout/fragment_my_running_tracks" >
+        <argument
+            android:name="user_Name"
+            app:argType="string" />
+        <argument
+            android:name="user_Pass"
+            app:argType="string" />
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/menu_wall"
+        android:name="com.example.letsrun.fragments.WallFragment"
+        android:label="Wall"
+        tools:layout="@layout/fragment_wall"/>
+
+
+
+    <action android:id="@+id/action_global_profile2" app:destination="@id/menu_profile"/>
+    <action android:id="@+id/action_global_myRunningTracks" app:destination="@id/myRunningTracks" />
+    <action android:id="@+id/action_global_singing" app:destination="@id/singing" />
+    <action
+        android:id="@+id/action_global_friendsListFragment"
+        app:destination="@id/friendsListFragment" />
+    <action android:id="@+id/action_global_menu_wall" app:destination="@id/menu_wall" />
+    <fragment
+        android:id="@+id/menu_login"
+        android:name="com.example.letsrun.fragments.LogInFragment"
+        android:label="Log in"
+        tools:layout="@layout/fragment_log_in" />
+    <action android:id="@+id/action_global_menu_login" app:destination="@id/menu_login"/>
+    <fragment
+        android:id="@+id/menu_signup"
+        android:name="com.example.letsrun.fragments.SignUpFragment"
+        android:label="Sign up"
+        tools:layout="@layout/fragment_sign_up" />
+    <action android:id="@+id/action_global_menu_signup" app:destination="@id/menu_signup" />
+    <fragment
+        android:id="@+id/menu_post"
+        android:name="com.example.letsrun.fragments.PostFragment"
+        android:label="Post"
+        tools:layout="@layout/fragment_post" />
+    <action android:id="@+id/action_global_menu_post" app:destination="@id/menu_post" />
+    <fragment
+        android:id="@+id/menu_account"
+        android:name="com.example.letsrun.fragments.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+    <action android:id="@+id/action_global_menu_account" app:destination="@id/menu_account" />
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.letsrun.fragments.MapsFragment"
+        android:label="Post"
+        tools:layout="@layout/fragment_maps">
+        <argument
+            android:name="post_id"
+            app:argType="string" />
+    </fragment>
+    <action android:id="@+id/action_global_mapsFragment" app:destination="@id/mapsFragment" />
+</navigation>
